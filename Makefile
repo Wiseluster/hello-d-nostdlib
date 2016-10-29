@@ -3,8 +3,8 @@
 BIN = hello
 DC = dmd
 DFLAGS = -O -release
-LD = gcc
-LDFLAGS = -nostdlib -s
+LD = ld
+LDFLAGS = -s
 OBJ = $(BIN).o
 RM = rm
 RMFLAGS = -fr
