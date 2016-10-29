@@ -18,11 +18,6 @@ extern (C) pure nothrow @nogc @safe
          }
     }
 
-    int __dmd_personality_v0()
-    {
-        return 7;
-    }
-
     void _d_arraybounds()
     {
     }
