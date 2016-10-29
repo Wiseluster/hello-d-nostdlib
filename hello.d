@@ -9,7 +9,7 @@ extern (C) pure nothrow @nogc @safe
              naked;
              mov EAX, 1;
              mov EDI, EAX;
-             lea ESI, msg;
+             lea RSI, msg;
              mov EDX, msg.length;
              syscall;
              mov EAX, 60;
