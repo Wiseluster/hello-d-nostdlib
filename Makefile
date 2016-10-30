@@ -1,7 +1,7 @@
 .PHONY: all clean run
 
-ARCH_BITS = $(shell getconf LONG_BIT)
-ifeq ($(ARCH_BITS), 64)
+BITS = $(shell getconf LONG_BIT)
+ifeq ($(BITS), 64)
 ARCH_DFLAGS = -m64
 ARCH_LDFLAGS = -melf_x86_64
 else
