@@ -12,6 +12,14 @@ TARGET = $(PACKAGE)
 RM = rm
 RMFLAGS = -fr
 
+ifeq ($(BITS), 64)
+	DFLAGS += -m64
+	LDFLAGS += -melf_x86_64
+else ifeq ($(BITS), 32)
+	DFLAGS += -m32
+	LDFLAGS += -melf_i386
+endif
+
 all: $(TARGET)
 
 clean:
