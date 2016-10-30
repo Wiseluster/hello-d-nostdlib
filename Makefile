@@ -1,6 +1,13 @@
 .PHONY: all clean run
 
-BITS = $(shell getconf LONG_BIT)
+ARCH_BITS = $(shell getconf LONG_BIT)
+ifeq ($(ARCH_BITS), 64)
+	ARCH_DFLAGS = -m64
+	ARCH_LDFLAGS = -melf_x86_64
+else
+	ARCH_DFLAGS = -m32
+	ARCH_LDFLAGS = -melf_i386
+endif
 DC = dmd
 DFLAGS = -O -release
 LD = ld
@@ -12,14 +19,6 @@ TARGET = $(PACKAGE)
 RM = rm
 RMFLAGS = -fr
 
-ifeq ($(BITS), 64)
-	DFLAGS += -m64
-	LDFLAGS += -melf_x86_64
-else
-	DFLAGS += -m32
-	LDFLAGS += -melf_i386
-endif
-
 all: $(TARGET)
 
 clean:
@@ -29,7 +28,7 @@ run: all
 	$(shell pwd)/$(TARGET)
 
 $(TARGET): $(OBJECT)
-	$(LD) $(LDFLAGS) $^ -o$@
+	$(LD) $(ARCH_LDFLAGS) $(LDFLAGS) $^ -o$@
 
 $(OBJECT): $(SOURCE)
-	$(DC) $(DFLAGS) -c $^ -of$@
+	$(DC) $(ARCH_DFLAGS) $(DFLAGS) -c $^ -of$@
