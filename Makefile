@@ -2,22 +2,24 @@
 
 ARCH_BITS = $(shell getconf LONG_BIT)
 ifeq ($(ARCH_BITS), 64)
-	ARCH_DFLAGS = -m64
-	ARCH_LDFLAGS = -melf_x86_64
+ARCH_DFLAGS = -m64
+ARCH_LDFLAGS = -melf_x86_64
 else
-	ARCH_DFLAGS = -m32
-	ARCH_LDFLAGS = -melf_i386
+ARCH_DFLAGS = -m32
+ARCH_LDFLAGS = -melf_i386
 endif
+
 DC = dmd
 DFLAGS = -O -release
 LD = ld
 LDFLAGS = -s
-OBJECT = $(PACKAGE).o
-PACKAGE = hello
-SOURCE = $(PACKAGE).d
-TARGET = $(PACKAGE)
 RM = rm
 RMFLAGS = -fr
+
+PACKAGE = hello
+SOURCE = $(PACKAGE).d
+OBJECT = $(PACKAGE).o
+TARGET = $(PACKAGE)
 
 all: $(TARGET)
 
