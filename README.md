@@ -14,7 +14,7 @@ Please use GNU ``make`` to build this program.
 
 ### Custom variables
 
-``BITS``: System bits. Default value depends on architecture (``x86-64``/``i686``), ``64`` for ``x86-64``, other values for ``i686``.
+``BITS``: System bits. Default value depends on architecture (``x86-64``/``i686``), ``64`` for ``x86-64``, and other values for ``i686``.
 
 ``DC``: The D compiler. Default value is ``dmd``, but ``ldc2`` is preferred.
 
@@ -27,4 +27,4 @@ Please use GNU ``make`` to build this program.
 ## Suggestions
 To obtain a smaller and faster binary, please specify the argument ``DC=ldc2`` for ``make`` to build.
 
-Of course you need a LLVM D compiler (https://github.com/ldc-developers/ldc) to do this.
+Of course you need <a href="https://github.com/ldc-developers/ldc">the LLVM-based D compiler (LDC)</a> to do this.
