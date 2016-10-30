@@ -25,6 +25,6 @@ Please use GNU ``make`` to build this program.
 ``LDFLAGS``: Arguments passed to the linker. Default value is ``-s``.
 
 ## Suggestions
-To obtain a smaller and faster binary, please specify the argument ``DC=ldc2`` for ``make`` to build.
+To obtain a smaller and faster binary, please use <a href="https://github.com/ldc-developers/ldc">the LLVM-based D compiler (LDC)</a> to build:
 
-Of course you need <a href="https://github.com/ldc-developers/ldc">the LLVM-based D compiler (LDC)</a> to do this.
+``make DC=ldc2 <your arguments...>``
