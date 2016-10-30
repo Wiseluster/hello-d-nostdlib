@@ -5,19 +5,23 @@ DC = dmd
 DFLAGS = -O -release -m
 LD = ld
 LDFLAGS = -s
+OBJECT = $(PACKAGE).o
+PACKAGE = hello
+SOURCE = $(PACKAGE).d
+TARGET = $(PACKAGE)
 RM = rm
 RMFLAGS = -fr
 
-all: hello
+all: $(TARGET)
 
 clean:
 	$(RM) $(RMFLAGS) hello.o hello
 
 run: all
-	$(shell pwd)/hello
+	$(shell pwd)/$(TARGET)
 
-hello: hello.o
+$(TARGET): $(OBJECT)
 	$(LD) $(LDFLAGS) $^ -o$@
 
-hello.o: hello.d
+$(OBJECT): $(SOURCE)
 	$(DC) $(DFLAGS) -c $^ -of$@
