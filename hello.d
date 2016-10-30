@@ -1,3 +1,6 @@
+version (LDC)
+    pragma(LDC_no_moduleinfo);
+
 __gshared char[14] msg = "Hello, world!\n";
 
 extern (C) pure nothrow @nogc @safe
@@ -55,9 +58,9 @@ extern (C) pure nothrow @nogc @safe
         void _d_unittest(string, uint)
         {
         }
-    }
 
-    void _d_dso_registry(void*)
-    {
+        void _d_dso_registry(void*)
+        {
+        }
     }
 }
