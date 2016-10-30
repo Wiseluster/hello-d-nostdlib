@@ -15,7 +15,7 @@ RMFLAGS = -fr
 all: $(TARGET)
 
 clean:
-	$(RM) $(RMFLAGS) hello.o hello
+	$(RM) $(RMFLAGS) $(OBJECT) $(TARGET)
 
 run: all
 	$(shell pwd)/$(TARGET)
