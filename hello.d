@@ -35,10 +35,10 @@ extern (C) pure nothrow @nogc @safe
                     int 0x80;
                 }
             else
-                static assert(false, "Inline assembler unsupported");
+                static assert(false, "dmd-styled x86 inline assembler unsupported");
         }
     else
-        static assert(false, "Operating system unsupported");
+        static assert(false, "operating system unsupported");
 
     version (DigitalMars)
     {
