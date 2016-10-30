@@ -14,7 +14,7 @@ Please use GNU ``make`` to build this program.
 
 ### Custom variables
 
-``BITS``: System bits. Default value depends on architecture (``x86-64``/``i686``), ``64`` for ``x86-64``, and other values for ``i686``.
+``BITS``: System bits. Default value depends on architecture (``x86-64``/``i686``).
 
 ``DC``: D compiler. Default value is ``dmd``, but ``ldc2`` is preferred.
 
