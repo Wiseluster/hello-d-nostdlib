@@ -8,7 +8,7 @@ LDFLAGS = -s
 RM = rm
 RMFLAGS = -fr
 
-all: $(BIN)
+all: hello
 
 clean:
 	$(RM) $(RMFLAGS) hello.o hello
