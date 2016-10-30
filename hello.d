@@ -29,7 +29,7 @@ extern (C) pure nothrow @nogc @safe
                     mov EBX, 1;
                     lea ECX, msg;
                     mov EDX, msg.length;
-                    int 0X80;
+                    int 0x80;
                     mov EAX, 1;
                     xor EBX, EBX;
                     int 0x80;
