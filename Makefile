@@ -1,8 +1,9 @@
 .PHONY: all clean run
 
 BIN = hello
+BITS = $(shell getconf LONG_BIT)
 DC = dmd
-DFLAGS = -O -release
+DFLAGS = -O -release -m
 LD = ld
 LDFLAGS = -s
 OBJ = $(BIN).o
@@ -15,7 +16,7 @@ all: $(BIN)
 clean:
 	$(RM) $(RMFLAGS) $(OBJ) $(BIN)
 
-run:
+run: all
 	$(PWD)/$(BIN)
 
 $(BIN): $(OBJ)
