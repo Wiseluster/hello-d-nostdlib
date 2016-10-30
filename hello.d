@@ -1,11 +1,10 @@
-version (DigitalMars)
-    version (linux)
-    {
-        version (X86_64)
-            version = SUPPORTED;
-        else version (X86)
-            version = SUPPORTED;
-    }
+version (linux)
+{
+    version (D_InlineAsm_X86_64)
+        version = SUPPORTED;
+    else version (D_InlineAsm_X86)
+        version = SUPPORTED;
+}
 
 version (SUPPORTED)
 {
@@ -47,24 +46,27 @@ extern (C) pure nothrow @nogc @safe
              }
     }
 
-    int __dmd_personality_v0()
+    version (DMD)
     {
-        return 7;
+        int __dmd_personality_v0(int, int, ulong, void*, void*)
+        {
+            return 7;
+        }
+
+        void _d_arraybounds(string, uint)
+        {
+        }
+
+        void _d_assert(string, uint)
+        {
+        }
+
+        void _d_unittest(string, uint)
+        {
+        }
     }
 
-    void _d_arraybounds()
-    {
-    }
-
-    void _d_assert()
-    {
-    }
-
-    void _d_unittest()
-    {
-    }
-
-    void _d_dso_registry()
+    void _d_dso_registry(void*)
     {
     }
 }
