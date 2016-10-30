@@ -2,7 +2,7 @@
 
 BITS = $(shell getconf LONG_BIT)
 DC = dmd
-DFLAGS = -O -release -m
+DFLAGS = -O -release -m$(BITS)
 LD = ld
 LDFLAGS = -s
 OBJECT = $(PACKAGE).o
