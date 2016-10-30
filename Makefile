@@ -2,7 +2,7 @@
 
 BITS = $(shell getconf LONG_BIT)
 DC = dmd
-DFLAGS = -O -release -m$(BITS)
+DFLAGS = -O -release
 LD = ld
 LDFLAGS = -s
 OBJECT = $(PACKAGE).o
@@ -15,7 +15,7 @@ RMFLAGS = -fr
 ifeq ($(BITS), 64)
 	DFLAGS += -m64
 	LDFLAGS += -melf_x86_64
-else ifeq ($(BITS), 32)
+else
 	DFLAGS += -m32
 	LDFLAGS += -melf_i386
 endif
