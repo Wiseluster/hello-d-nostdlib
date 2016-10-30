@@ -16,7 +16,7 @@ Please use GNU ``make`` to build this program.
 
 ``BITS``: System bits. Default value depends on architecture (``x86-64``/``i686``), ``64`` for ``x86-64``, and other values for ``i686``.
 
-``DC``: The D compiler. Default value is ``dmd``, but ``ldc2`` is preferred.
+``DC``: D compiler. Default value is ``dmd``, but ``ldc2`` is preferred.
 
 ``DFLAGS``: Arguments passed to the compiler. Default value is ``-O -release``.
 
