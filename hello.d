@@ -46,7 +46,7 @@ extern (C) pure nothrow @nogc @safe
              }
     }
 
-    version (DMD)
+    version (DigitalMars)
     {
         int __dmd_personality_v0(int, int, ulong, void*, void*)
         {
