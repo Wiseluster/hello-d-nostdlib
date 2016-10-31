@@ -22,7 +22,7 @@ Please use GNU ``make`` to build this program.
 
 ``LD``: Object linker. Its default value is ``ld``.
 
-``LDFLAGS``: Arguments passed to the linker. Its default value is ``-s``.
+``LDFLAGS``: Arguments passed to the linker. Its default value is empty.
 
 ## Suggestions
 To obtain a smaller and faster binary, please use <a href="https://github.com/ldc-developers/ldc">the LLVM-based D compiler (LDC)</a> to build:
