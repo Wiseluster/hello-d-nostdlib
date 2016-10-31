@@ -12,7 +12,7 @@ endif
 DC = dmd
 DFLAGS = -O -release
 LD = ld
-LDFLAGS = -s
+LDFLAGS = 
 RM = rm
 RMFLAGS = -fr
 
