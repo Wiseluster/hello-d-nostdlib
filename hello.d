@@ -1,10 +1,10 @@
 version (LDC)
     pragma(LDC_no_moduleinfo);
 
-__gshared char[14] msg = "Hello, world!\n";
-
 extern (C) pure nothrow @nogc @safe
 {
+    __gshared char[14] msg = "Hello, world!\n";
+
     version (linux)
         void _start()
         {
