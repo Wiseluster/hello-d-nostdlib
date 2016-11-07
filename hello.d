@@ -14,7 +14,7 @@ extern (C) pure nothrow @nogc @safe
                     naked;
                     mov EAX, 1;
                     mov EDI, EAX;
-                    mov ESI, offsetof msg;
+                    lea RSI, msg;
                     mov EDX, msg.length;
                     syscall;
                     mov EAX, 60;
@@ -27,7 +27,7 @@ extern (C) pure nothrow @nogc @safe
                     naked;
                     mov EAX, 4;
                     mov EBX, 1;
-                    mov ECX, offsetof msg;
+                    lea ECX, msg;
                     mov EDX, msg.length;
                     int 0x80;
                     mov EAX, 1;
